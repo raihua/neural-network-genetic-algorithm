@@ -1,0 +1,14 @@
+04/21/2023 05:46:21 PM - INFO - ***Evolving 10 generations with population 20***
+04/21/2023 05:46:21 PM - INFO - ***Doing generation 1 of 10***
+04/29/2023 11:00:47 AM - INFO - ***Evolving 10 generations with population 20***
+04/29/2023 11:00:47 AM - INFO - ***Doing generation 1 of 10****
+04/29/2023 11:03:29 AM - INFO - ***Evolving 10 generations with population 20***
+04/29/2023 11:03:29 AM - INFO - ***Doing generation 1 of 10****
+04/29/2023 11:07:48 AM - INFO - ***Evolving 10 generations with population 20***
+04/29/2023 11:07:48 AM - INFO - ***Doing generation 1 of 10***
+04/30/2023 11:17:21 AM - INFO - ***Evolving 10 generations with population 20***
+04/30/2023 11:17:21 AM - INFO - ***Doing generation 1 of 10****
+04/30/2023 11:17:56 AM - INFO - ***Evolving 10 generations with population 20***
+04/30/2023 11:17:56 AM - INFO - ***Doing generation 1 of 10****
+05/01/2023 12:23:55 PM - INFO - ***Evolving 10 generations with population 20***
+05/01/2023 12:23:55 PM - INFO - ***Doing generation 1 of 10****
