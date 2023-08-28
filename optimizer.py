@@ -43,14 +43,16 @@ class Optimizer():
             (list): Population of network objects
 
         """
-
+        pop = [Network() for x in range(0,count+1)]
+        for network in pop:
+            network.create_random()
 
         return pop
 
     @staticmethod
     def fitness(network):
         """Return the accuracy, which is our fitness function."""
-        return
+        return network.accuracy
 
     def grade(self, pop):
         """Find average fitness for a population.
@@ -76,9 +78,12 @@ class Optimizer():
             (list): Two network objects
 
         """
+        crossOverPoint = random.randint(0, len(mother))
 
+        child1 = {**{k: mother[k] for k in list(mother.keys())[:crossOverPoint]}, **{k: father[k] for k in list(father.keys())[crossOverPoint:]}}
+        child2 = {**{k: father[k] for k in list(father.keys())[:crossOverPoint]}, **{k: mother[k] for k in list(mother.keys())[crossOverPoint:]}}
 
-        return
+        return [Network(child1),Network(child2)]
 
     def mutate(self, network):
         """Randomly mutate one part of the network.
@@ -90,7 +95,7 @@ class Optimizer():
             (Network): A randomly mutated network object
 
         """
-
+        
 
         return
 
