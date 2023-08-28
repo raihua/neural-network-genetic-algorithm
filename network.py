@@ -1,7 +1,7 @@
 """Class that represents the network to be evolved."""
 import random
 import logging
-from trainme import train_and_score
+from trainer import train_and_score
 
 class Network():
     """Represent a network and let us operate on it.
