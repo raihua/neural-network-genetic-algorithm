@@ -9,6 +9,7 @@ from functools import reduce
 from operator import add
 import random
 from network import Network
+from statistics import mean
 
 class Optimizer():
     """Class that implements genetic algorithm for MLP optimization."""
@@ -65,7 +66,7 @@ class Optimizer():
 
         """
 
-        return
+        return float(mean(x.fitness() for x in pop))
 
     def breed(self, mother, father):
         """Make two children as parts of their parents.
