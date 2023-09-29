@@ -14,8 +14,7 @@ from statistics import mean
 class Optimizer():
     """Class that implements genetic algorithm for MLP optimization."""
 
-    def __init__(self, nn_param_choices, retain=0.4,
-                 random_select=0.1, mutate_chance=0.2):
+    def __init__(self, nn_param_choices, retain=0.4, random_select=0.1, mutate_chance=0.2):
         """Create an optimizer.
 
         Args:
@@ -41,32 +40,32 @@ class Optimizer():
                 size of the population
 
         Returns:
-            (list): Population of network objects
+            (list): population of network objects
 
         """
-        pop = [Network() for x in range(0,count+1)]
-        for network in pop:
+        population = [Network(self.nn_param_choices) for x in range(0,count)]
+        for network in population:
             network.create_random()
 
-        return pop
+        return population
 
     @staticmethod
     def fitness(network):
         """Return the accuracy, which is our fitness function."""
         return network.accuracy
 
-    def grade(self, pop):
+    def grade(self, population):
         """Find average fitness for a population.
 
         Args:
-            pop (list): The population of networks
+            population (list): The population of networks
 
         Returns:
             (float): The average accuracy of the population
 
         """
 
-        return float(mean(x.fitness() for x in pop))
+        return float(mean(child.fitness() for child in population))
 
     def breed(self, mother, father):
         """Make two children as parts of their parents.
@@ -77,14 +76,14 @@ class Optimizer():
 
         Returns:
             (list): Two network objects
-
+        
         """
-        crossOverPoint = random.randint(0, len(mother))
+        crossOverPoint = random.randint(1, len(mother)-1)
 
         child1 = {**{k: mother[k] for k in list(mother.keys())[:crossOverPoint]}, **{k: father[k] for k in list(father.keys())[crossOverPoint:]}}
         child2 = {**{k: father[k] for k in list(father.keys())[:crossOverPoint]}, **{k: mother[k] for k in list(mother.keys())[crossOverPoint:]}}
 
-        return [Network(child1),Network(child2)]
+        return [Network(self.nn_param_choices).create_set(child1), Network(self.nn_param_choices).create_set(child2)]
 
     def mutate(self, network):
         """Randomly mutate one part of the network.
@@ -96,20 +95,43 @@ class Optimizer():
             (Network): A randomly mutated network object
 
         """
-        
+        mutateChance = random.random()
+        hyperparameter_to_mutate = random.choice(['nb_neurons', 'nb_layers', 'activation', 'optimizer'])
 
-        return
 
-    def evolve(self, pop):
+        if mutateChance <= self.mutate_chance:
+            mutateIndex = random.randrange(len(network[hyperparameter_to_mutate]))
+            network[[hyperparameter_to_mutate][mutateIndex]] = random.choice(self.nn_param_choices[hyperparameter_to_mutate])
+
+        return network
+
+    def evolve(self, population):
         """Evolve a population of networks.
 
         Args:
-            pop (list): A list of network parameters
+            population (list): A list of network parameters
 
         Returns:
             (list): The evolved population of networks
 
         """
+        
+
+        # evaluate population fitness
+
+        # while not 2 parents appended
+
+            # select parent from population using select chance
+
+            # breed two parents
+
+            # mutate offspring
+
+            # evaluate fitness of offspring
+
+            # replace parents with offspring
+
+
 
 
         return
