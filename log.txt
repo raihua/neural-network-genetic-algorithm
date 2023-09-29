@@ -1,14 +1,33 @@
-04/21/2023 05:46:21 PM - INFO - ***Evolving 10 generations with population 20***
-04/21/2023 05:46:21 PM - INFO - ***Doing generation 1 of 10***
-04/29/2023 11:00:47 AM - INFO - ***Evolving 10 generations with population 20***
-04/29/2023 11:00:47 AM - INFO - ***Doing generation 1 of 10****
-04/29/2023 11:03:29 AM - INFO - ***Evolving 10 generations with population 20***
-04/29/2023 11:03:29 AM - INFO - ***Doing generation 1 of 10****
-04/29/2023 11:07:48 AM - INFO - ***Evolving 10 generations with population 20***
-04/29/2023 11:07:48 AM - INFO - ***Doing generation 1 of 10***
-04/30/2023 11:17:21 AM - INFO - ***Evolving 10 generations with population 20***
-04/30/2023 11:17:21 AM - INFO - ***Doing generation 1 of 10****
-04/30/2023 11:17:56 AM - INFO - ***Evolving 10 generations with population 20***
-04/30/2023 11:17:56 AM - INFO - ***Doing generation 1 of 10****
-05/01/2023 12:23:55 PM - INFO - ***Evolving 10 generations with population 20***
-05/01/2023 12:23:55 PM - INFO - ***Doing generation 1 of 10****
+09/29/2023 08:02:56 PM - INFO - ***Evolving 10 generations with population 20***
+09/29/2023 08:02:56 PM - INFO - ***Doing generation 1 of 10***
+09/29/2023 08:03:12 PM - INFO - ***Evolving 10 generations with population 20***
+09/29/2023 08:03:12 PM - INFO - ***Doing generation 1 of 10***
+09/29/2023 08:11:14 PM - INFO - ***Evolving 1 generations with population 2***
+09/29/2023 08:11:14 PM - INFO - ***Doing generation 1 of 1***
+09/29/2023 08:23:38 PM - INFO - Generation average: 41.32%
+09/29/2023 08:23:38 PM - INFO - --------------------------------------------------------------------------------
+09/29/2023 08:23:38 PM - INFO - --------------------------------------------------------------------------------
+09/29/2023 08:23:38 PM - INFO - {'nb_neurons': 512, 'nb_layers': 2, 'activation': 'elu', 'optimizer': 'adagrad'}
+09/29/2023 08:23:38 PM - INFO - Network accuracy: 48.52%
+09/29/2023 08:23:38 PM - INFO - {'nb_neurons': 1024, 'nb_layers': 2, 'activation': 'sigmoid', 'optimizer': 'adam'}
+09/29/2023 08:23:38 PM - INFO - Network accuracy: 48.20%
+09/29/2023 08:23:38 PM - INFO - {'nb_neurons': 768, 'nb_layers': 2, 'activation': 'tanh', 'optimizer': 'rmsprop'}
+09/29/2023 08:23:38 PM - INFO - Network accuracy: 27.24%
+09/29/2023 09:26:24 PM - INFO - ***Evolving 1 generations with population 1***
+09/29/2023 09:26:24 PM - INFO - ***Doing generation 1 of 1***
+09/29/2023 09:26:44 PM - INFO - ***Evolving 1 generations with population 1***
+09/29/2023 09:26:44 PM - INFO - ***Doing generation 1 of 1***
+09/29/2023 09:28:12 PM - INFO - Generation average: 44.96%
+09/29/2023 09:28:12 PM - INFO - --------------------------------------------------------------------------------
+09/29/2023 09:28:12 PM - INFO - --------------------------------------------------------------------------------
+09/29/2023 09:28:12 PM - INFO - {'nb_neurons': 64, 'nb_layers': 3, 'activation': 'sigmoid', 'optimizer': 'adamax'}
+09/29/2023 09:28:12 PM - INFO - Network accuracy: 46.86%
+09/29/2023 09:28:12 PM - INFO - {'nb_neurons': 64, 'nb_layers': 4, 'activation': 'elu', 'optimizer': 'sgd'}
+09/29/2023 09:28:12 PM - INFO - Network accuracy: 43.05%
+09/30/2023 12:23:04 AM - INFO - ***Evolving 1 generations with population 1***
+09/30/2023 12:23:04 AM - INFO - ***Doing generation 1 of 1***
+09/30/2023 12:26:49 AM - INFO - Generation average: 51.72%
+09/30/2023 12:26:49 AM - INFO - --------------------------------------------------------------------------------
+09/30/2023 12:26:49 AM - INFO - --------------------------------------------------------------------------------
+09/30/2023 12:26:49 AM - INFO - {'nb_neurons': 1024, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'}
+09/30/2023 12:26:49 AM - INFO - Network accuracy: 51.72%
