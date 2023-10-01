@@ -37,6 +37,8 @@ class Network():
         """
         self.network = network
 
+        
+
     def train(self, dataset):
         """Train the network and record the accuracy.
 
