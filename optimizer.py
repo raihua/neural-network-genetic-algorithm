@@ -65,7 +65,7 @@ class Optimizer():
 
         """
 
-        return float(mean(child.fitness() for child in population))
+        return float(mean(child.accuracy for child in population))
 
     def breed(self, mother, father):
         """Make two children as parts of their parents.
@@ -78,12 +78,18 @@ class Optimizer():
             (list): Two network objects
         
         """
+        childA, childB = Network(), Network()
+
         crossOverPoint = random.randint(1, len(mother)-1)
+        childAParams = {**{k: mother[k] for k in list(mother.keys())[:crossOverPoint]}, **{k: father[k] for k in list(father.keys())[crossOverPoint:]}}
+        childBParams = {**{k: father[k] for k in list(father.keys())[:crossOverPoint]}, **{k: mother[k] for k in list(mother.keys())[crossOverPoint:]}}
 
-        child1 = {**{k: mother[k] for k in list(mother.keys())[:crossOverPoint]}, **{k: father[k] for k in list(father.keys())[crossOverPoint:]}}
-        child2 = {**{k: father[k] for k in list(father.keys())[:crossOverPoint]}, **{k: mother[k] for k in list(mother.keys())[crossOverPoint:]}}
+        
+        childA.create_set(childAParams)
+        childB.create_set(childBParams)
 
-        return [Network(self.nn_param_choices).create_set(child1), Network(self.nn_param_choices).create_set(child2)]
+
+        return [childA, childB]
 
     def mutate(self, network):
         """Randomly mutate one part of the network.
@@ -96,12 +102,11 @@ class Optimizer():
 
         """
         mutateChance = random.random()
-        hyperparameter_to_mutate = random.choice(['nb_neurons', 'nb_layers', 'activation', 'optimizer'])
+        hyperparameter_to_mutate = random.choice(list(self.nn_param_choices.keys()))
 
 
         if mutateChance <= self.mutate_chance:
-            mutateIndex = random.randrange(len(network[hyperparameter_to_mutate]))
-            network[[hyperparameter_to_mutate][mutateIndex]] = random.choice(self.nn_param_choices[hyperparameter_to_mutate])
+            network[hyperparameter_to_mutate] = random.choice(self.nn_param_choices[hyperparameter_to_mutate])
 
         return network
 
@@ -115,9 +120,17 @@ class Optimizer():
             (list): The evolved population of networks
 
         """
-        
+        originalLength = len(sortedPopulation)
+        retainLength = self.retain * len(population)
+        numNewPopulationLength = originalLength - retainLength
 
-        # evaluate population fitness
+        print(population + "is here")
+        # evaluate population fitness and sort
+        sortedPopulation = sorted(population, key = lambda item: item.fitness())
+
+
+
+
 
         # while not 2 parents appended
 
