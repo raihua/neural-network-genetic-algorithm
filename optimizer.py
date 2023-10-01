@@ -104,11 +104,13 @@ class Optimizer():
         mutateChance = random.random()
         hyperparameter_to_mutate = random.choice(list(self.nn_param_choices.keys()))
 
-
         if mutateChance <= self.mutate_chance:
             network[hyperparameter_to_mutate] = random.choice(self.nn_param_choices[hyperparameter_to_mutate])
 
-        return network
+        mutatedNetwork = Network()
+        mutatedNetwork.create_set(network)
+
+        return mutatedNetwork
 
     def evolve(self, population):
         """Evolve a population of networks.
