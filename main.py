@@ -44,7 +44,7 @@ def generate(generations, population, nn_param_choices, dataset):
     """Generate a network with the genetic algorithm.
 
     Args:
-        generations (int): Number of times to evole the population
+        generations (int): Number of times to evolve the population
         population (int): Number of networks in each generation
         nn_param_choices (dict): Parameter choices for networks
         dataset (str): Dataset to use for training/evaluating
@@ -92,8 +92,8 @@ def print_networks(networks):
 
 def main():
     """Evolve a network."""
-    generations = 1  # Number of times to evole the population.
-    population = 1  # Number of networks in each generation.
+    generations = 1  # Number of times to evolve the population.
+    population = 2  # Number of networks in each generation.
     dataset = 'cifar10'
 
     nn_param_choices = {
