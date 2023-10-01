@@ -31,3 +31,35 @@
 09/30/2023 12:26:49 AM - INFO - --------------------------------------------------------------------------------
 09/30/2023 12:26:49 AM - INFO - {'nb_neurons': 1024, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'}
 09/30/2023 12:26:49 AM - INFO - Network accuracy: 51.72%
+09/30/2023 12:33:01 AM - INFO - ***Evolving 1 generations with population 1***
+09/30/2023 12:33:01 AM - INFO - ***Doing generation 1 of 1***
+09/30/2023 12:42:15 AM - INFO - ***Evolving 1 generations with population 1***
+09/30/2023 12:42:15 AM - INFO - ***Doing generation 1 of 1***
+09/30/2023 02:08:12 AM - INFO - Generation average: 50.36%
+09/30/2023 02:08:12 AM - INFO - --------------------------------------------------------------------------------
+09/30/2023 02:08:12 AM - INFO - --------------------------------------------------------------------------------
+09/30/2023 02:08:12 AM - INFO - {'nb_neurons': 1024, 'nb_layers': 2, 'activation': 'tanh', 'optimizer': 'adamax'}
+09/30/2023 02:08:12 AM - INFO - Network accuracy: 50.36%
+10/01/2023 03:52:36 PM - INFO - ***Evolving 1 generations with population 1***
+10/01/2023 03:52:36 PM - INFO - ***Doing generation 1 of 1***
+10/01/2023 03:55:30 PM - INFO - Generation average: 46.50%
+10/01/2023 03:55:30 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 03:55:30 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 03:55:30 PM - INFO - {'nb_neurons': 768, 'nb_layers': 2, 'activation': 'relu', 'optimizer': 'nadam'}
+10/01/2023 03:55:30 PM - INFO - Network accuracy: 46.50%
+10/01/2023 04:57:14 PM - INFO - ***Evolving 1 generations with population 1***
+10/01/2023 04:57:14 PM - INFO - ***Doing generation 1 of 1***
+10/01/2023 04:57:26 PM - INFO - Generation average: 45.18%
+10/01/2023 04:57:26 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 04:57:26 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 04:57:26 PM - INFO - {'nb_neurons': 128, 'nb_layers': 2, 'activation': 'elu', 'optimizer': 'adam'}
+10/01/2023 04:57:26 PM - INFO - Network accuracy: 45.18%
+10/01/2023 04:58:34 PM - INFO - ***Evolving 1 generations with population 2***
+10/01/2023 04:58:34 PM - INFO - ***Doing generation 1 of 1***
+10/01/2023 05:00:42 PM - INFO - Generation average: 39.67%
+10/01/2023 05:00:42 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 05:00:42 PM - INFO - --------------------------------------------------------------------------------
+10/01/2023 05:00:42 PM - INFO - {'nb_neurons': 512, 'nb_layers': 4, 'activation': 'elu', 'optimizer': 'sgd'}
+10/01/2023 05:00:42 PM - INFO - Network accuracy: 42.89%
+10/01/2023 05:00:42 PM - INFO - {'nb_neurons': 768, 'nb_layers': 3, 'activation': 'elu', 'optimizer': 'adadelta'}
+10/01/2023 05:00:42 PM - INFO - Network accuracy: 36.44%
