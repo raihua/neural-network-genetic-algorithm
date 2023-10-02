@@ -116,37 +116,42 @@ class Optimizer():
         """Evolve a population of networks.
 
         Args:
-            population (list): A list of network parameters
+            population (list): A list of network objects
 
         Returns:
-            (list): The evolved population of networks
+            (list): The evolved population of networks objects
 
         """
-        originalLength = len(sortedPopulation)
-        retainLength = self.retain * len(population)
-        numNewPopulationLength = originalLength - retainLength
+        originalLength = len(population)
+        retainLength = int(self.retain * originalLength)
 
-        print(population + "is here")
-        # evaluate population fitness and sort
-        sortedPopulation = sorted(population, key = lambda item: item.fitness())
+        sortedPopulation = sorted(population, key=lambda x: x.accuracy, reverse=True)
+        evolvedPopulation = sortedPopulation[:retainLength]
 
+        # random select from rejected by chance:
+        for i in range(retainLength, originalLength):
+            if random.random() <= self.random_select:
+                evolvedPopulation.append(sortedPopulation[i])
 
+        numChildrenNeeded = originalLength - len(evolvedPopulation)
 
+        while numChildrenNeeded > 0:
+            # select two parents:
+            parent1, parent2 = evolvedPopulation[0], evolvedPopulation[1]
+            [child1, child2] = self.breed(parent1.network, parent2.network)
 
+            if numChildrenNeeded == 1:
+                evolvedPopulation.append(child1)
+                numChildrenNeeded -= 1
 
-        # while not 2 parents appended
+            evolvedPopulation.append(child1)
+            evolvedPopulation.append(child2)
+            numChildrenNeeded -= 2
 
-            # select parent from population using select chance
+        # Sort the evolved population by fitness
+        evolvedPopulation = sorted(evolvedPopulation, key=lambda x: x.accuracy, reverse=True)
 
-            # breed two parents
+        # Truncate the population to the original size
+        evolvedPopulation = evolvedPopulation[:originalLength]
 
-            # mutate offspring
-
-            # evaluate fitness of offspring
-
-            # replace parents with offspring
-
-
-
-
-        return
+        return evolvedPopulation
