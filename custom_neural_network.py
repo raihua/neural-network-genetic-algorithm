@@ -69,20 +69,16 @@ def generate(networks, dataset):
     print_networks(networks)
     logging.info('-'*80)
 
-nn_param_choices = {
-        'nb_neurons': [64, 128, 256, 512, 768, 1024],
-        'nb_layers': [1, 2, 3, 4],
-        'activation': ['relu', 'elu', 'tanh', 'sigmoid'],
-        'optimizer': ['rmsprop', 'adam', 'sgd', 'adagrad','adadelta', 'adamax', 'nadam'],
-    }
-
-
-networkParams = [{'nb_neurons': 64, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
-        {'nb_neurons': 128, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
-        {'nb_neurons': 256, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
-        {'nb_neurons': 512, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
+# hand tuned network params
+networkParams = [
         {'nb_neurons': 768, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
-        {'nb_neurons': 1024, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'}]
+        {'nb_neurons': 768, 'nb_layers': 2, 'activation': 'relu', 'optimizer': 'sgd'},\
+        {'nb_neurons': 768, 'nb_layers': 3, 'activation': 'relu', 'optimizer': 'sgd'},\
+        {'nb_neurons': 768, 'nb_layers': 4, 'activation': 'relu', 'optimizer': 'sgd'},\
+        # {'nb_neurons': 768, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
+        # {'nb_neurons': 1024, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'},\
+        # {'nb_neurons': 256, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'}
+        ]
 
 # create networks and set their params
 networkList = []
@@ -92,7 +88,7 @@ for params in networkParams:
     networkList.append(newNetwork)
 
 
-dataset = 'cifar10'
+dataset = 'mnist'
 logging.info(f'Dataset: {dataset}')
 generate(networkList,dataset)
 
