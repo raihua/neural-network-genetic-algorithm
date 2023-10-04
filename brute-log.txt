@@ -1,9 +1,0 @@
-09/30/2023 02:26:19 PM - INFO - ***Brute forcing networks***
-09/30/2023 02:26:57 PM - INFO - {'nb_neurons': 64, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'rmsprop'}
-09/30/2023 02:26:57 PM - INFO - Network accuracy: 36.66%
-09/30/2023 02:27:32 PM - INFO - {'nb_neurons': 64, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'adam'}
-09/30/2023 02:27:32 PM - INFO - Network accuracy: 30.49%
-09/30/2023 02:27:56 PM - INFO - {'nb_neurons': 64, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'sgd'}
-09/30/2023 02:27:56 PM - INFO - Network accuracy: 44.31%
-09/30/2023 03:32:16 PM - INFO - {'nb_neurons': 64, 'nb_layers': 1, 'activation': 'relu', 'optimizer': 'adagrad'}
-09/30/2023 03:32:16 PM - INFO - Network accuracy: 47.53%

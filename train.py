@@ -12,7 +12,7 @@ from keras.utils import to_categorical
 from keras.callbacks import EarlyStopping
 
 # Helper: Early stopping.
-early_stopper = EarlyStopping(patience=5)
+early_stopper = EarlyStopping(patience=2)
 
 def get_cifar10():
     """Retrieve the CIFAR dataset and process the data."""
@@ -114,7 +114,7 @@ def train_and_score(network, dataset):
 
     model.fit(x_train, y_train,
               batch_size=batch_size,
-              epochs=10,  # using early stopping, so no real limit
+              epochs=10000,  # using early stopping, so no real limit
               verbose=0,
               validation_data=(x_test, y_test),
               callbacks=[early_stopper])

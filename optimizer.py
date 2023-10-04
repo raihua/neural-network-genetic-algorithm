@@ -43,7 +43,7 @@ class Optimizer():
             (list): population of network objects
 
         """
-        population = [Network(self.nn_param_choices) for x in range(0,count)]
+        population = [Network(self.nn_param_choices) for _ in range(0,count)]
         for network in population:
             network.create_random()
 
@@ -81,8 +81,11 @@ class Optimizer():
         childA, childB = Network(), Network()
 
         crossOverPoint = random.randint(1, len(mother)-1)
-        childAParams = {**{k: mother[k] for k in list(mother.keys())[:crossOverPoint]}, **{k: father[k] for k in list(father.keys())[crossOverPoint:]}}
-        childBParams = {**{k: father[k] for k in list(father.keys())[:crossOverPoint]}, **{k: mother[k] for k in list(mother.keys())[crossOverPoint:]}}
+        
+        childAParams = {k: mother[k] for k in list(mother.keys())[:crossOverPoint]} \
+                    | {k: father[k] for k in list(father.keys())[crossOverPoint:]}
+        childBParams = {k: father[k] for k in list(father.keys())[:crossOverPoint]} \
+                    | {k: mother[k] for k in list(mother.keys())[crossOverPoint:]}
 
         
         childA.create_set(childAParams)
